@@ -36,7 +36,8 @@ public class ArrayListConversion
         System.out.println();
         for (String b : alist) 
             System.out.print(b + " "); // new test
-        alist.remove(1); // throws UnsupportedOperation Exception , becoz we are not allowed to change the size of the list since it is referenced by array.
+        alist.remove(1); // throws UnsupportedOperation Exception , 
+        //becoz we are not allowed to change the size of the list since it is referenced by array.
 
     }
 
