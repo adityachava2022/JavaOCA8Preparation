@@ -1,0 +1,43 @@
+* In between the access modifier and return type , there can be final/static methods.
+Ex:
+public final void nap(int minutes) throws InterruptedException {
+// take a nap
+}
+method body
+
+*an identifi er may only contain letters, numbers, $, or _.
+Also, the fi rst character is not allowed to be a number, and reserved words are not allowed.
+By convention, methods begin with a lowercase letter but are not required to.
+
+*A method can use vararguments like an array. But it should only be in the last argument, i.e only one
+per method.
+
+ex: 
+public void walk1(int... nums) { }
+public void walk2(int start, int... nums) { }
+public void walk3(int... nums, int start) { } // DOES NOT COMPILE
+public void walk4(int... start, int... nums) { } // DOES NOT COMPILE
+
+*for Var args:
+ - > You can pass in an array, 
+ - > you can list the elements of the array and let Java create it for you. 
+ - > You can even omit the vararg values in the method call and Java will create an array of length zero for you.
+ 
+*Access Modifiers:
+¦ private: Only accessible within the same class
+¦ default (package private) access: private and other classes in the same package
+¦ protected: default access and child classes
+¦ public: protected and classes in the other packages
+
+
+*For protected access modifier :
+	- > A member is used without referring to a variable, protected access is allowed.
+	- > A member is used through a variable. If it is a subclass, protected access is allowed. This works for references to the same class or a
+subclass.
+
+Static  :
+---------
+*Static methods don’t require an instance of the class. They are shared among all users of the class.
+* Static members are accessed by using a 'class name.member'.
+Note: You can use an instance of the object to call a static method. The compiler checks for the type of the reference and
+uses that instead of the object
