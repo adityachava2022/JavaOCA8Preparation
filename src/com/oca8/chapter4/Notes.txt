@@ -1,12 +1,12 @@
-* In between the access modifier and return type , there can be final/static methods.
+* In between the access modifier and return type , there can be final/static kewords.
 Ex:
 public final void nap(int minutes) throws InterruptedException {
 // take a nap
 }
 method body
 
-*an identifi er may only contain letters, numbers, $, or _.
-Also, the fi rst character is not allowed to be a number, and reserved words are not allowed.
+*an identifier may only contain letters, numbers, $, or _.
+Also, the first character is not allowed to be a number, and reserved words are not allowed.
 By convention, methods begin with a lowercase letter but are not required to.
 
 *A method can use vararguments like an array. But it should only be in the last argument, i.e only one
@@ -20,7 +20,7 @@ public void walk4(int... start, int... nums) { } // DOES NOT COMPILE
 
 *for Var args:
  - > You can pass in an array, 
- - > you can list the elements of the array and let Java create it for you. 
+ - > you can pass the elements of the array and let Java create it for you. 
  - > You can even omit the vararg values in the method call and Java will create an array of length zero for you.
  
 *Access Modifiers:
@@ -37,7 +37,7 @@ subclass.
 
 Static  :
 ---------
-*Static methods don’t require an instance of the class. They are shared among all users of the class.
+* Static methods don’t require an instance of the class. They are shared among all users of the class.
 * Static members are accessed by using a 'class name.member'.
 Note: You can use an instance of the object to call a static method. The compiler checks for the type of the reference and
 uses that instead of the object
@@ -60,7 +60,7 @@ Scenarios :
 and assign any static variables as needed.
 * Static final variables should be atleast intialized in the static initialization blocks.
 There is a common case to use a static initializer: when you need to initialize a
-static fi eld and the code to do so requires more than one line. This often occurs
+static field and the code to do so requires more than one line. This often occurs
 when you want to initialize a collection like an ArrayList. When you do need to
 use a static initializer, put all the static initialization in the same block.
 
@@ -70,3 +70,119 @@ static Imports:
 * Note that if there is a method we implemented with (the name that was imported) is implemented in the class, then the 
 the implemented method would take precedence.
 * Importing static members with the same name will not compile.
+
+Pass by Value:
+---------------
+Java is a “pass-by-value” language. This means that a copy of the variable is made and the
+method receives that copy.
+
+Method overloading:
+-------------------
+* Method overloading occurs when there are different method signatures with the same name but different type parameters.
+* Everything other than the method signature can vary for overloaded methods. This means there can be different access 
+ modifiers, specifiers (like static), return types, and exception lists.
+ 
+ example :
+ public void fly(int numMiles) { }
+public void fly(short numFeet) { }
+public boolean fly() { return false; }
+void fly(int numMiles, short numFeet) { }
+public void fly(short numFeet, int numMiles) throws Exception { }
+
+non-compiling examples:
+-----------------------
+1)public void fly(int numMiles) { }
+  public int fly(int numMiles) { } // DOES NOT COMPILE bcoz the return type is different.
+  
+2)public void fly(int numMiles) { }
+  public static void fly(int numMiles) { } // DOES NOT COMPILE bcoz of the static method.
+  
+Auto-boxing:
+------------
+converting from primitive type to wrapper class.
+* If there are two overloaded methods with both the primitive type and the wrapper class, then
+ Java will consider the primitive type first.
+Example :
+	public void fly(int numMiles) { }
+	public void fly(Integer numMiles) { }
+	java will call the int type method first.
+
+Rule						Example of what will be chosen for glide(1,2)
+--------			       ------------------------------------------------
+Exact match by type 		public String glide(int i, int j) {}
+Larger primitive type 		public String glide(long i, long j) {}
+Autoboxed type 				public String glide(Integer i, Integer j) {}
+Varargs 					public String glide(int... nums) {}
+
+* note that java will only do one conversion.
+public class TooManyConversions {
+	public static void play(Long l) { }
+	public static void play(Long... l) { }
+	public static void main(String[] args) {
+		play(4); // DOES NOT COMPILE 
+		play(4L); // calls the Long version
+	}
+ }
+ 
+Default Constructors:
+---------------------
+* Every class in Java has a constructor whether you code one or not. If you don’t include any
+constructors in the class, Java will create one for you without any parameters. This constructor generation will
+happen at the compile time.
+* Including a private constructor will tell the compiler not to include default no-argument constructor.It also 
+prevents other classes from instantiating the class. This is useful when a class only has static methods or the
+class wants to control all calls to create new instances of itself.
+
+Overloading Constructors:
+-------------------------
+* One method in the constructor can call another constructor by using 'this(args)'.Note that 'this()' has to be 
+the first non-commented statement in the constructor.
+
+*All the final instance variables have to be set only once.
+
+Order of Initialization :
+-------------------------
+1) Initialize the super class if present.
+2) Static variables and static initializers in the order they appear in the file.
+3) Instance variables and instance initializers in the order they appear.
+4) The constructor.
+
+These 4 rules apply when an object is being created. If the class is being refered then it only first two rules appply.
+* Rules 3 & 4 only executes if the instance is being created.
+* after all the rules , any method gets called.
+
+Rules for JavaBeans naming conventions:
+---------------------------------------
+Rule 									Example
+----					   				---------
+Properties are private. 				private int numEggs;
+
+Getter methods begin with is if the     public boolean isHappy() {
+property is a boolean.						return happy;
+										}
+
+				
+Getter methods begin with get if the	public int getNumEggs() {
+property is not a boolean.					return numEggs;
+										}
+
+
+Setter methods begin with set. 			public void setHappy(boolean happy) {
+											this.happy = happy;
+										}
+The method name must have a prefix		public void setNumEggs(int num) {
+of set/get/is, followed by the first		numEggs = num;
+letter of the property in uppercase,	}
+followed by the rest of the property 
+name.
+											
+Creating Immutable Classes:
+---------------------------
+* To make a class immutable , you need to avoid coding the setter method.To set the initial value, you can use the constructor.
+* when you are writing immutable classes, then the return type should also be immutable. If you are using a mutable object then
+  the solution is to make a copy of the mutable object.
+* Another approach for the getter is to return an immutable object
+
+
+*encapsulation refers to preventing callers from changing the instance variables
+directly. Immutability refers to preventing callers from changing the instance variables at all.
