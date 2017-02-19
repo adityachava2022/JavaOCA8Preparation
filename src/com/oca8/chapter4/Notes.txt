@@ -184,5 +184,5 @@ Creating Immutable Classes:
 * Another approach for the getter is to return an immutable object
 
 
-*encapsulation refers to preventing callers from changing the instance variables
-directly. Immutability refers to preventing callers from changing the instance variables at all.
+* Encapsulation refers to preventing callers from changing the instance variables directly.
+* Immutability refers to preventing callers from changing the instance variables at all.

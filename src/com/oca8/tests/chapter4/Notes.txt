@@ -1,0 +1,12 @@
+* in the return type of the methods, the double to int conversion does not happen.
+* remember that the declaration of  array like this {true,true} does not compile.The correct declaration is
+  new Boolean{true,true}
+* there is a difference between protected and package private , research about it.
+* final static initializers must be initialized only once : declaration,instance initializers , constructors.
+
+* for static imports, the syntax is :
+	import static <package>;
+* for static imports, when importing a static method , then it is not required to specify even the paramater types of the method.
+* instance methods cannot be called in static methods in the class.
+
+* Even a static initializer(or)methods do not have access to instance members.
