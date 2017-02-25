@@ -1,0 +1,9 @@
+* The instance method cannot override a parent's static method.
+* Variables are always hidden regardless of the access modifier
+* A reference to an object requires an explicit cast if referenced
+with a subclass.
+* a superclass may have already implemented an inherited interface, so the
+concrete subclass would not need to implement the method
+* we can override a default method in an interface provided it
+will satisfy the overriden rules.
+* in abstract class , you can call a main method.

@@ -1,0 +1,232 @@
+* Inheritance is process by which the subclasses can include the public and
+protected members of the super class.
+* Java only supports single inheritance by which a class may inherit from only 
+one direct parent class.Java also supports multiple levels of inheritance, by which one class may extend  another class, which in turn extends another class.
+* By design, Java doesn’t support multiple inheritance in the language because studies have shown that multiple inheritance
+can lead to complex, often difficult-to-maintain code.
+* The code will not compile , if one extends final class.
+* The public and default package-level class access modifiers are the only ones
+that can be applied to top-level classes within a java file.
+* Private and protected modifiers are to be used within the inner classes only.
+* There can be atmost one public class or interface in a java file.
+* 'super()' should be used for calling the parent class and it should be the first statement in the constructor.
+* The java compiler automatically inserts no argument constructor 'super()' at the first line if it not found.
+* The subclasses can add a no argument constructor without their super classes having the no argument constructor ,provided the subclass's constructor should call to their super classes using the 'super()' method.
+
+Constructor Definition Rules:
+------------------------------
+1)The first statement of any constructor must be a call to another constructor in the same class using 'this()' (or)
+call to its parent class constructor using 'super()'.
+2)Super call should not be used after the first line in a constructor.
+3)If there is no explicit call to 'super()' in a constructor , then java will insert a no-argument super call
+as its first statement.
+4)If the parent class doesn’t have a no-argument constructor and the child class doesn’t define any constructor ,
+the compiler will throw an error and try to insert a default no-argument constructor into the child class.
+5)If that parent doesn’t have a no-argument constructor, then each of the child class constructors 
+must to call the parent class constructor using super.
+
+Calling Inherited Class Members:
+--------------------------------
+* Java classes may use any public or protected member of the parent class, including methods,
+primitives, or object references. If the parent class and child class are part of the same
+package, the child class may also use any default members defined in the parent class.
+
+*In a child class , you can directly call a parent class member or using this operator or using 
+super operator (only super is to be used to call the parent class members).
+
+Inheriting Methods:
+--------------------
+--------------------
+* Note that the overloading does include the same method signature but different exception being thrown is not overloading.
+Overriding a Method:
+--------------------
+When you override a method, you can use the super keyword to reference the parent class method.
+rules:
+------
+1. The method in the child class must have the same signature as the method in the parent class.
+2. The method in the child class must be at least as accessible or more accessible than the method in the parent class.
+3. The method in the child class may not throw a checked exception that is new or broader than the class of any exception thrown in the parent class method. (the ovveriden method must throw an exception which must have the subclass.)
+4. If the method returns a value, it must be the same or a subclass of the return type of method in the parent class, known as covariant return types.
+
+Redecaring private:
+--------------------
+*The private method in the parent is not accessible to the child method.So overriding the parent private method in child method doesn’t have any effect.
+
+Hiding Static Methods:
+----------------------
+* A hiding method occurs when a child class defines a static method with the same name and signature as parent static method.
+rules:
+-----
+1. The method in the child class must have the same signature as the method in the parent class.
+2. The method in the child class must be at least as accessible or more accessible than the method in the parent class.
+3. The method in the child class may not throw a checked exception that is new or broader than the class of any exception thrown in the parent class method.
+4. If the method returns a value, it must be the same or a subclass of the return type of in the parent class, known as covariant return types.
+5. The method defined in the child class must be static if it is static in the parent class(this is called method hiding).Similarly ,the method defined in the child class must not be static, if it is not marked as static in the parent class.
+Creating final methods:
+-----------------------
+* The final methods cannot be ovveriden.This rule applies when overriding and overhiding methods.
+* These can be used when we are sure that for all the child instances , the functionality will be the same.
+
+Inheriting Variables :
+--------------------
+--------------------
+* you can only hide a variable but cannot overhide it.
+*the rules for accessing the parent and child variables are quite similar.
+* If you’re referencing the variable from within the parent class, the variable defined in the parent class is used. 
+*Alternatively, if you’re referencing the variable from within a child class, the variable defined in the child class is used.
+
+Creating Abstract Classes:
+--------------------------
+--------------------------
+Defining an Abstract Class:
+---------------------------
+* An abstract class is a class which is marked with the keyword 'abstract' and cannot be instantiated.
+* An abstract method is a method marked with the abstract keyword defined in an abstract class, for which no implementation is provided in the class in which it is declared.
+* An abstract class may include non abstract methods and variables.
+* An abstract class is not required to include any abstract methods.
+* Although , an abstract class does not implement abstract method , but the abstract method should only be declared in an abstract class.
+* An abstract class/method can never be final.This is because if it final, then you can never use it since it cannot be extended/ovveriden.
+* An abstract class/method can never be private.We cannot create subclass of that class if it is private or we can access the method.
+* Even with abstract methods, the rules for inheriting methods must be followed.
+Creating a Concrete Class:
+---------------------------
+* A concrete class is the first nonabstract subclass that extends an abstract class and is required to implement all inherited abstract methods.
+* The nonabstract subclasses may extend  another nonabstract subclasses and may not implement all the abstract methods.
+Extending an Abstract Class:
+----------------------------
+* An abstract class can extend another abstract class without implementing the abstract methods.
+* If the intermediate subclass implements the abstract methods then further subclasses need not implement those abstract methods instead they can be considered concrete.
+abstract class definition rules:
+--------------------------------
+1) an abstract classes cannot be instantiated directly.
+2) an abstract classes may be defined with any number ,including zero, of abstract methods and non-abstract.
+3) An abstract class may not be final or private.
+4) An abstract class that extends another abstract class inherits all of its 
+abstract methods as its own abstract methods.
+5) The first concrete class that extends an abstract class must provide an implementation for all of the inherited abstract methods.
+abstract method definition rules:
+---------------------------------
+1) Abstract methods may only be defined in abstract class.
+2) Abstract methods may not be declared as private or final.
+3) Abstract methods must not provide a method body/implementation in the abstract class for which it is declared.
+4) Implementing an abstract class in a subclass follows the same rules for overriding a method.For example, the name and signature must be the same, and the visibility of the method in the subclass must be at least as accessible as the method in the parent.
+class.
+Implementing Interfaces:
+------------------------
+------------------------
+* An interface is abstract data type that defines a list of abstract public methods that any class implementing the interface must provide. An interface can also include a list of constant variables and default methods.
+* By default abstract and public keywords are inserted by java.
+* New to Java 8 is the notion of default and static interface methods.
+Defining an Interface:
+----------------------
+rules:
+------
+1) Interfaces cannot be instantiated.
+2) An interface is not required to have methods.
+3) An interface cannot be marked as final.
+4) All top-level interfaces must be public only and they need to have abstract modifier in their definition.
+This means having protected,private,final will not compile,since this is incompatible with these assumptions.
+5) All non-default methods in an interface are assumed to have abstract and public modifiers in thier
+deinition. Therefore, having protected,private, final will not compile,since this is incompatible with these assumptions.
+Inheriting an Interface:
+------------------------
+1) An interface that extends another interface , as well as an abstract class that implements an interface,
+inherits all of its abstract methods as its own abstract methods.
+2)The first concrete class that implements an interface or extends an abstract class that implements an
+interface must provide an implementation for all of its abstract methods.
+
+Classes, Interfaces, and Keywords:
+----------------------------------
+class can implement an interface but it cannot extend an interface. An interface can extend another interface but it cannot implement an interface.An interface cannot extend a class.
+
+Abstract Methods and Multiple Inheritance:
+------------------------------------------
+* If a class that implements two interfaces having the same abstract method, then it will work fine because implementing one method
+will automatically implement the other method.
+* If the method name is the same but the input parameters are different, there is no conflict because this is considered as
+method overload.
+* It is not possible in java to define two methods with same name and input parameters but with different return type.The class or interface attempting to inherit both interfaces will not compile.
+* The compiler would throw an exception if you define an interface or abstract class that inherits two interfaces with conflicting
+methods.
+
+Interface Variables:
+--------------------
+rules:
+1) Interface variables should be public , static , final. Thus giving protected, private , abstract will generate compiler error.
+2) The value of the interface variable should be set when declared, since it is declared final.
+* If public static final is not defined then the java will automatically insert it.
+
+Default Interface Methods:
+--------------------------
+With the release of Java 8, the authors of Java have introduced a new type of method to an interface, referred to as a default method.
+* A default method is a method in an interface with 'default' keyword which has a method body.
+* A default method in an interface is an abstract method with default implementation.In this manner, classes have the option to override the default method if they need to, but they are not required to do so. If the class doesn’t override the method, the default implementation will be used. In this manner, the method definition is concrete, not abstract.
+* The default method is always public.
+
+rules:
+------
+1) A default method is to be declared only in interfaces but not in class or abstract class.
+2) A default method must have the default keyword and it must have the method body. Interfaces
+may only contain methods with a body that are marked as default.
+3) The default method cannot be static,final,abstract. You will get a compiler error when you try to add one.
+4) Like all the methods in an interface, the default methods must be public. you cannot add private or 
+protected access modifiers.
+
+
+* when an interface extends another interface containing the default method, it may choose to use the default method.
+Alternatively , it can override the default method with the same rules of covariant return type and exceptions.
+* Finally, the interface may redeclare the method as abstract, requiring classes that implement the new interface to explicitly provide
+a method body.
+The above two points may apply for abstract class implementing an interface.
+
+Default Methods and Multiple Inheritance:
+-----------------------------------------
+* If a class inherits two interfaces with default methods with same name and signature, the code will not compile.Though, if 
+the subclass overrides these default methods, then the code will compile since the ambiguity is resolved. This rule is also true
+when you use the abstract class implementing two default methods because the default method could be called in a concrete method within the abstract class.
+
+Static Interface Methods:
+-------------------------
+Java 8 includes support for static methods in the interfaces. A static method defined in an interface is not inherited in any classes that implement the interface i.e if you want to call the static method in the inherited class, then you must use the method name.
+rules:
+-----
+1) Like all the methods in the interface, you can the static methods in the interface must be public. This implies that the
+giving private or protected will give compiler error. compiler will automatically insert the public once it is not found.
+2) you can call these methods using interface name.
+
+* In the subclass you need to access the static method only by using interface name.
+* A class that implements two interfaces with the same static name and signature will compile because the static methods are not
+inherited by the subclass and must be accessed with a reference to the interface name.
+* The static interface methods do not have problem with inheriting two interfaces with same static definitions as
+we need to use interface name to call a particular method.
+
+Understanding Polymorphism:
+---------------------------
+---------------------------
+Java supports polymorphism, the property of an object to take on many different forms. Java object may be accessed using a reference with the same type as the object, a reference that is a superclass of the object, or a reference that defines an interface that the object implements, either directly or through a superclass. Furthermore, a cast is not required if the object is being reassigned to a super type or interface of the object.
+* Once the object has been assigned a new reference type, only the methods and variables
+available to that reference type are callable on the object without an explicit cast.
+Object vs. Reference :
+--------------------
+rules:
+------
+1)The type of the object defines which properties exist with the object inside the memory.
+2)The type of the object reference defines which properties of the object are accessible in the java program.
+
+Casting Objects:
+----------------
+rules:
+------
+1) Casting from subclass to superclass is not required.
+2) Casting is required from superclass to subclass.
+3) Compiler will throw error if cast to an unrelated type.
+4) Even when the code compiles , an execption may be thrown at runtime if an object being cast is not actually an instance of that class. 
+
+Virtual Methods:
+----------------
+* A Virtual method is a method for which the specific implementation is not determined until runtime.
+ex:  non-static,non-final,non-private are considered virtual methods, since any of them can
+be overridden at runtime.
+Polymorphic Parameters:
+-----------------------
+* we can pass instances of a subclass or class that implements an interface to a method which takes a super class or an interface as a parameter.This property is referred to as polymorphic parameters of a method.
