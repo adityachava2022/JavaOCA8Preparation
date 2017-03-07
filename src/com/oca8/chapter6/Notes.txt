@@ -1,0 +1,43 @@
+Understanding Exceptions:
+--------------------------
+--------------------------
+* An exception is an event that alters program flow. Java has a Throwable superclass for all objects that represent these events.
+* Error means somthing went horribly wrong that the program should not tempt to recover from it. eg: Disk drive disappeared.
+* RuntimeException is defined as extending RuntimeException and their subclasses.These are also known as unchecked exceptions.
+  ex: an array index out of bounds is an unchecked exception.
+* Checked Exception is defined as extending Exception class and its subclasses except the RuntimeException.
+  Checked exceptions tend to be more anticipated—for example, trying to read a fi le that doesn’t exist.
+
+java.lang.Object  ---> java.lang.Throwable --->  java.lang.Exception  ---> java.lang.RuntimeException	(ex : NullPointerException and ArrayIndexOutOfBoundsException)
+										   |
+										   |-->  java.lang.Error
+
+* Notice that you’re using two different keywords here. throw tells Java that you want to throw an Exception. throws simply declares that the method might throw an Exception. It also might not.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Type 						How to recognize				need to catch by program	 			required to handle or declare it
+-------------------------------------------------------------------------------------------------------------------------------------
+unChecked exception			subclasses of 					Yes										No
+(or)RuntimeExceptions		RuntimeException				
+						
+Checked Exception			subclasss of Exception except   Yes										Yes
+							RuntimeException
+
+Error						subclass of Error				No										No
+---------------------------------------------------------------------------------------------------------------------------------------
+
+using a try statement:
+----------------------
+----------------------
+* try should have curly braces even if there is one single statement inside the try block.
+* try without a catch block is invalid.
+finally :
+-----------
+* The finally block always executes, whether or not an exception occurs in the try block. If exception is thrown then after
+catch block finally block is executed. If exception is not thrown then finally is executed.
+* Catch block is not required if finally is present.
+* When System.exit(0) is called in the try or catch block, finally does not run.(this is the exception case)
+
+* Java program executes based on the order in which the catch blocks appear.
+* If the exception is not reached in one of the catch blocks, a compiler error about unreachable code occurs.This
+happens when a superclass exception is caught before the subclass exception.
