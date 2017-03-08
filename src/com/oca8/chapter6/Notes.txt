@@ -15,7 +15,7 @@ java.lang.Object  ---> java.lang.Throwable --->  java.lang.Exception  ---> java.
 * Notice that you’re using two different keywords here. throw tells Java that you want to throw an Exception. throws simply declares that the method might throw an Exception. It also might not.
 
 -------------------------------------------------------------------------------------------------------------------------------------
-Type 						How to recognize				need to catch by program	 			required to handle or declare it
+Type 						How to recognize				Okay for program to catch?	 			Is program required to handle or declare?
 -------------------------------------------------------------------------------------------------------------------------------------
 unChecked exception			subclasses of 					Yes										No
 (or)RuntimeExceptions		RuntimeException				
@@ -41,3 +41,39 @@ catch block finally block is executed. If exception is not thrown then finally i
 * Java program executes based on the order in which the catch blocks appear.
 * If the exception is not reached in one of the catch blocks, a compiler error about unreachable code occurs.This
 happens when a superclass exception is caught before the subclass exception.
+
+Recognizing Common Exception Types:
+-----------------------------------
+Runtime Exceptions:
+------------------
+Runtime Exceptions extend RuntimeException class.They don't need to be handled or declared.They can be thrown by programmer or java program.
+
+Common runtime exceptions include the following:
+-------------------------------------------------
+ArithmeticException            - Thrown by the JVM when code attempts to divide by zero
+ArrayIndexOutOfBoundsException - Thrown by the JVM when code uses an illegal index to access an array
+ClassCastException 			   - Thrown by the JVM when an attempt is made to cast an object  to a subclass of which it is not an instance
+IllegalArgumentException 	   - Thrown by the programmer to indicate that a method has been passed an illegal or inappropriate argument
+NullPointerException 		   - Thrown by the JVM when there is a null reference where an object is required
+NumberFormatException          - Thrown by the programmer when an attempt is made to convert a string to a numeric type but the string doesn’t have an appropriate format
+
+Checked Exceptions:
+-------------------
+Checked exceptions are subclasses of Exception class but should not contain RuntimeExceptions in their hierarchy.They need to be handled 
+and declared. They can be thrown by programmer or java program.
+
+Common checked exceptions include the following: 
+FileNotFoundException - Thrown programmatically when code tries to reference a file that does not exist.
+IOException           - Thrown programmatically when there’s a problem reading or writing a file
+
+FileNotFoundException is a child of IOException.
+
+Errors:
+-------
+Errors extend the Error class. They are thrown by the JVM and should not be
+handled or declard.
+
+ExceptionInInitializerError - Thrown by the JVM when a static initializer throws an exception and doesn't handle it.
+StackOverflowError          - Thrown by the JVM when a method calls itself too many times.(this is called as infinite recursion.)
+NoClassDefFoundError        - Thrown by the JVM when a class that the code uses
+is available at compile time but not runtime.
