@@ -1,0 +1,3 @@
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html
+https://docs.oracle.com/javase/tutorial/java/data/converting.html

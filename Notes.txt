@@ -1,0 +1,28 @@
+* The JVM looks for a method named main() which takes an array of Strings as input and void as return type.Otherwise it throws a java.lang.NoSuchMethodError.So , it throws a runtime error.
+* Access modifiers (public/private/protected) are valid only inside the scope of a class, not of a method.
+* You can call a main method without arguments.
+* When a class whose members should be accessible only to members of that class is coded such a way that its members are accessible to other classes as well, this is called weak encapsulation.
+* If you are not importing a class or package of the class, you need to use the class's fully qualified name while using it.
+* Using a fully qualified class name always works irrespective of whether you import the package or not.  In this case, all classes of package util are available in TestClass without any import statement but Logger is in util.log4j. Therefore, the use of fully qualified class name for Logger, which is util.log4j.Logger, makes it work.
+
+* Multiple inheritance of state which is the ability to inherit fields from multiple classes. This can be possible by using interfaces.
+* Multiple inheritance of implementation is the ability to inherit method definitions from multiple classes.
+* Multiple inheritance of type, which is the ability of a class to implement more than one interface. An object can have multiple types: the type of its own class and the types of all the interfaces that the class implements. This means that if a variable is declared to be the type of an interface, then its value can reference any object that is instantiated from any class that implements the interface.
+
+As with multiple inheritance of implementation, a class can inherit different implementations of a method defined (as default or static) in the interfaces that it extends. In this case, the compiler or the user must decide which one to use.
+-------------------------------------------------
+read about coupling,typing,cohesion,encapsulation and polymorphism
+-------------------------------------------------
+* A Cohesion is used to indicate the degree to which a class has a single, well-focused purpose.
+* Coupling is the degree at which one class knows another cass.
+example : Let us consider two classes class A and class B. If class A knows class B through its interface only i.e it interacts with class B through its API then class A and class B are said to be loosely coupled.
+* For a good software design, one should have low coupling and high cohesion.
+------------------------------------------------------------------------
+
+* Unlike if-then and if-then-else statements, the switch statement can have a number of possible execution paths. A switch works with the byte, short, char, and int primitive data types. It also works with enumerated types , the String class, and a few special classes that wrap certain primitive types: Character, Byte, Short, and Integer .
+
+* From Java SE7 and later, you can use a String object in the switch statement's expression. In the Switch the comparision is made using '.equals()'
+method of the string.
+
+* Generics must be declared using the Wrapper Classes only , if we use the 
+primitives , it will fail to compile.

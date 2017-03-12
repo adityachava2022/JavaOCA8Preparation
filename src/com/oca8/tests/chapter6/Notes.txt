@@ -1,0 +1,7 @@
+* Runtime Exceptions are unchecked exceptions , they are allowed to be declared
+but they don't have to be required.
+* Checked Exceptions must be handled or declared and are allowed and required.
+* Erros are allowed to be declared or handled but are not required.
+* IOException can be thrown by JVM or programmer.
+* Classes listed in the throws part of a method declaration must extend
+java.lang.Throwable. This includes Error, Exception, and RuntimeException. Arbitrary classes such as String can’t go there. Any Java type, including Exception, can be declared as the return type. However, this will simply return the object rather than throw an exception.

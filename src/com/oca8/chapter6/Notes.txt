@@ -77,3 +77,19 @@ ExceptionInInitializerError - Thrown by the JVM when a static initializer throws
 StackOverflowError          - Thrown by the JVM when a method calls itself too many times.(this is called as infinite recursion.)
 NoClassDefFoundError        - Thrown by the JVM when a class that the code uses
 is available at compile time but not runtime.
+
+Calling Methods That Throw Exceptions :
+--------------------------------------
+*Checked exceptions must be handled or declared.
+subclasses:
+-----------
+* When a class overrrides a method from its superclass or implements a method from an interface .It’s not allowed to add new checked
+exceptions to the method signature.
+* A subclass is allowed to declare fewer exceptions than the superclass or interface. Similarly, a class is allowed to declare a subclass of an exception type.
+Printing an Exception:
+----------------------
+3 ways of printing exceptions:
+1)only exception
+2)only exception message
+3)print stacktrace
+* Every time you call a method, Java adds it to the stack until it completes.When an exception is thrown, it goes through the stack until it finds a method that can handle it or it runs out of stack
