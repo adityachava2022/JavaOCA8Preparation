@@ -16,6 +16,9 @@ public class Chapter2RQ2 {
 		//float as well because int will be converted to floating value.
 		//note that here it is only a single int value but not decimal value to throw error.
 		float fz = x + y ;
+		
+		byte b = (byte)(x + y);
+		short s = (short)(x+y);
  	}
 
 }
