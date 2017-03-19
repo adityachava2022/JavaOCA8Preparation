@@ -1,4 +1,4 @@
-package com.oca8.chapter3;
+package com.oca8.chapter3.arraylists;
 
 import java.util.ArrayList;
 
@@ -61,6 +61,12 @@ public class ArrayListTest {
 			System.out.println(alist2);
 			alist2.set(0,"setmethod");
 			System.out.println(alist2);
+			//clear: void clear()
+			alist.clear();
+			//size: int size()
+			System.out.println(alist.size());
+			//isEmpty: boolean isEmpty()
+			System.out.println(alist.isEmpty());
 	}
 
 }

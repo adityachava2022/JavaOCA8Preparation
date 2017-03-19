@@ -18,8 +18,8 @@ public class DateTimeAPI {
 		 */
 		LocalDate date1 = LocalDate.of(2017, Month.FEBRUARY, 10);
 		LocalDate date2 = LocalDate.of(2017, 1, 10);
-		//LocalDate date3 = LocalDate.of(2015, 16, 10);// throws java.time.DateTimeException
-		//LocalDate date4 = LocalDate.of(2015, 1, 40); // throws java.time.DateTimeException
+		//LocalDate date3 = LocalDate.of(2015, 16, 10);// throws java.time.DateTimeException : Invalid value for MonthOfYear (valid values 1 - 12): 16
+		//LocalDate date4 = LocalDate.of(2015, 1, 40); // throws java.time.DateTimeException : Invalid value for DayOfMonth (valid values 1 - 28/31): 40
 		
 		/*
 		 *  public static LocalTime of(int hour, int minute)

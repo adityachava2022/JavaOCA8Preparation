@@ -1,4 +1,4 @@
-package com.oca8.tests;
+package com.oca8.tests.chapter2;
 
 public class Chapter2RQ9 {
 

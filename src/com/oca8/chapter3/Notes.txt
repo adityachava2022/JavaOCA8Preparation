@@ -1,0 +1,120 @@
+String common methods:
+----------------------
+length() - length of the string.
+charAt() - returns char at the particular index, it throws StringIndexOutOfBounds Exception when not index found.
+indexOf() - returns -1 if no index found.
+toLowerCase() - converts to lowercase with string output
+toUpperCase() - converts to uppercase with string output
+equals() - string value comparision
+equalsIgnoreCase() - string value comparision ignoring case
+boolean startsWith(String prefix) - checks if it startsWith specified string 
+boolean endsWith(String suffix) - checks if it endsWith specified string
+boolean contains(String str) - checks for the string and returns boolean
+String replace(char oldChar, char newChar) , String replace(CharSequence oldChar, CharSequence newChar) -> A CharSequence is a general way of representing several classes, including String and StringBuilder
+public String trim() - the white spaces get removed from the string be it \t,\n,\r
+
+StringBuilder :
+---------------
+constructors:
+------------
+StringBuilder() - Constructs a string builder with no characters in it and an initial capacity of 16 characters.
+StringBuilder(CharSequence seq)/(String s) - Constructs a string builder that contains the same characters as the specified CharSequence.
+StringBuilder(int capacity) - Constructs a string builder with no characters in it and an initial capacity specified by the capacity argument.
+
+StringBuider methods:
+---------------------
+charAt(), indexOf(), length(), and substring() - same like string. substring with a stringbuilder will return a string.
+append() : StringBuilder append(String str)
+insert() : StringBuilder insert(int offset, String str)
+delete()   : StringBuilder delete(int start, int end)
+deleteCharAt() : StringBuilder deleteCharAt(int index)
+reverse() : StringBuilder reverse()
+toString() : String toString()
+
+arrays: 
+-------
+for arrays , there would be a '.length' parameter.
+*Arrays.sort(anyobject/primitivetype array)
+*Arrays.binarySearch(anyobject/primitivetype array,anyobject/primitivetype key) - only works for sorted array. if key not found then
+result is -1.If unsorted array, then the result is unpredictable.
+*The rule when an item is not found is to negate that index and subtract 1.
+
+
+ArrayList:
+----------
+ArrayList() - Constructs an empty list with an initial capacity of ten.
+ArrayList(Collection<? extends E> c) - Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
+ArrayList(int initialCapacity) - Constructs an empty list with the specified initial capacity.
+
+arrayList methods:
+------------------
+size() - int size()
+isEmpty() - boolean isEmpty()
+add() - boolean add(E element) ,void add(int index, E element)
+remove() - boolean remove(E element), E remove(int index)
+set() - E set(int index,E element)
+clear() - void clear()
+contains() - boolean contains(Object object)
+equals() - boolean equals(Object object)
+
+Wrapper classes:
+----------------
+primitivetype 			Wrapperclass 				example
+-------------			-------------				--------
+boolean				Boolean					new Boolean(true)
+byte				Byte					new Byte((byte)10)
+short				Short					new Short(short)10)
+int					Integer					new Integer(10)
+long				Long					new Long(10)
+float				Float					new Float(1.0);
+double				Double					new Double(1.0)
+char				Character				new Character('c')
+
+
+Wrapperclass 			converting string to primitive		converting string to  wrapper
+-------------			------------------------------		-----------------------------
+Boolean				Boolean.parseBoolean('true');		Boolean.valueOf('true');
+Byte				Byte.parseByte("1");			Byte.valueOf("1");
+Short				Short.parseShort("1");			Short.valueOf("1");
+Integer				Integer.parseInt("1");			Integer.valueOf("1");
+Long				Long.parseLong("1");			Long.valueOf("1");
+Float				Float.parseFloat("1.0");		Float.valueOf("1.0");
+Double 				Double.parseDouble("2.2");		Double.valueOf("2.2);
+Character			NA								NA
+
+ArrayList to Array conversion:
+------------------------------
+methods:
+Object[] list.toArray()  - returns an array with all the elements from first to last in the proper sequence.
+<T> T[] list.toArray(T[] a) - returns an array with all the elements from first to last in the proper sequence.
+The runtime return type will be the type specified in the argument type.
+
+List<String> list = new ArrayList<>();
+list.add("1");list.add("2");
+Object[] objarr = list.toArray();
+String[] strarr = list.toArray(new String[0]); // specifying '0' as the size of the array will be helpful to create the
+proper size array.
+
+Array to ArrayList conversion:
+------------------------------
+static <T> List<T> 	Arrays.asList(T... a)  - returns a fixed-size list backed by the array.
+
+String[] strarray = {"11","12","13","14"};
+List<String> alist= Arrays.asList(strarray);
+
+Note: All the arrays are initialized to contain the default values of their type
+
+Notes:
+------
+* StringBuilder has .capacity(), string has .length() , char array has .length field. and array list has '.size()' method.
+
+* You cannot chain methods when creating a period. Only the last method has to be considered.This is because the methods are static.
+exc: Period p = Period.ofYears(1).ofWeeks(1);
+
+* you can't specify array length when you are initializing it.
+ex: new Object[1]{new Object()};
+
+* StringBuilder.replace has 3 parameters replace(int begin,int end, String str)
+
+
+ISO_DATE: 2015-02-05

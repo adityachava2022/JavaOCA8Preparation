@@ -1,7 +1,9 @@
 package com.oca8.chapter2;
 
 public class CompoundOperatorSpeciality {
-
+	/* the compound operator ignores
+	 * type conversions
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -15,7 +17,7 @@ public class CompoundOperatorSpeciality {
 		
 		long x1 = 10;
 		int y1 = 5;
-		y1 *=  x; // COMPILES
+		y1 *=  x1; // COMPILES
 	}
 
 }

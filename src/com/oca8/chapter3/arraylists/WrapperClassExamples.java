@@ -1,4 +1,4 @@
-package com.oca8.chapter3;
+package com.oca8.chapter3.arraylists;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,7 @@ public class WrapperClassExamples {
 	{
 		int primitive = Integer.parseInt("120"); // returns primitive type
 		Integer wrapper = Integer.valueOf("120"); // returns wrapper class
+		Float f = new Float(2.3);
 		
 		//auto boxing and unboxing
 		

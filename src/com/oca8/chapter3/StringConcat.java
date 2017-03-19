@@ -7,7 +7,6 @@ public class StringConcat {
 		/* 1. If both operands are numeric, + means numeric addition.
 		2. If either operand is a String, + means concatenation.
 		3. The expression is evaluated left to right.
-		Now let’s look at some examples:*/
 		/* in simple terms,use numeric addition if two numbers are involved,
 use concatenation otherwise, and evaluate from left to right.*/
 		

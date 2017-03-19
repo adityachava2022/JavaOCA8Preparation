@@ -1,4 +1,4 @@
-package com.oca8.chapter3;
+package com.oca8.chapter3.arraylists;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +29,11 @@ public class ArrayListConversion
         List<String> alist = Arrays.asList(array); // returns fixed size list
         System.out.println(alist.size()); // 2
         alist.set(1, "test"); // [hawk, test]
+        for (String b : array) 
+            System.out.print(b + " "); // hawk, test
+        System.out.println();
+        for (String b : alist) 
+            System.out.print(b + " "); // hawk, test
         array[0] = "new"; // [new, test]
         System.out.println();
         for (String b : array) 

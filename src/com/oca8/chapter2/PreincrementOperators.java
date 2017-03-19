@@ -6,8 +6,8 @@ public class PreincrementOperators {
 		// TODO Auto-generated method stub
 		int x = 3;
 		int y = ++x * 5 / x-- + --x;
-		System.out.println("x is " + x);
-		System.out.println("y is " + y);
+		System.out.println("x is " + x); //2
+		System.out.println("y is " + y); //7
 	}
 
 }
