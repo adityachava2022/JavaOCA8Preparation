@@ -8,14 +8,19 @@ public class InvalidLambdaExamples {
 		 * You can omit the braces around parameters , if there is only one parameter and its
 		 * type is not specified.
 		 */
-		(a, b -> a.startsWith("test")); // DOES NOT COMPILE , it has two parameters
+		invalidLambdaExp ile = (a, b -> a.startsWith("test")); // DOES NOT COMPILE , it has two parameters
 		/*
 		 * If you are using curly braces, then you need to specify the return statment and semicolon.
 		 */
-		(a -> { a.startsWith("test"); }); // DOES NOT COMPILE, it has no return statement.
-		(a -> { return a.startsWith("test") }); // DOES NOT COMPILE, it has no semicolon at the end.
+		invalidLambdaExp ile2 = a -> { a.startsWith("test"); }; // DOES NOT COMPILE, it has no return statement.
+		invalidLambdaExp ile3 = (a -> { return a.startsWith("test") }); // DOES NOT COMPILE, it has no semicolon at the end.
 		
 
 	}
-
+	
 }
+
+interface invalidLambdaExp
+{
+	public String funct(String a);
+};

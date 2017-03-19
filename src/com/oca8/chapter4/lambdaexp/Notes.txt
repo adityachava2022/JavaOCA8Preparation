@@ -1,14 +1,20 @@
+* A functional interface is an interface which contains only one abstract method. But you can have zero or more static/default methods.
 *Interfaces with only one declared method are called as functional interfaces. They are used in the functional programming.
 * Lambda Expressions syntax:
 	(arguments) -> (body)
 	
 * The body can be either a single expression or a statement block. In the expression form, the body is simply evaluated and returned. In the block form, the body is evaluated like a method body and a return statement returns control to the caller of the anonymous method.
 
+
+* When no braces are used, it is not required to specify the return type or the semicolon.
 * Lambda supports "target typing" which infers the object type from the context in which it is used.
+* The parenthesis can be omitted if there is only one parameter and its type is not explicitly stated. ex: (a,b -> a.startWith('a'))
+* If the method does not take any parameters then you need to specify using
+this syntax  : () - > body
 
 * Deferred execution means that code is specified now but will run later.
-* The parenthesis can be omitted if there is only one parameter and its type is not explicitly stated. ex: (a,b -> a.startWith('a'))
-* When no braces are used, it is not required to specify the return type or the semicolon.
+
+
 * Lambdas are only allowed to access the final variables.
 * You should not redeclare the variables with the same name inside the expression.
 
@@ -18,4 +24,5 @@ public interface Predicate<T> {
 	boolean test(T t);
 }
 * Predicate will take any reference type input and returns a boolean output.
-* Arraylist declares a removeIf() method that takes a predicate as input.
+* Arraylist declares a removeIf() method that takes a predicate as input. 
+boolean	removeIf(Predicate<? super E> filter) : Removes all of the elements of this collection that satisfy the given predicate.
