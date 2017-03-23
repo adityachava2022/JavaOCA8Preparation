@@ -1,8 +1,6 @@
 package com.oca8.chapter4;
 
-import static java.util.Arrays; // DOES NOT COMPILE static imports should be only for static members of the class
 import static java.util.Arrays.asList;
-static import java.util.Arrays.*; // DOES NOT COMPILE it should import static
 
 public class BadStaticImports {
 

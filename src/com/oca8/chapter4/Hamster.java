@@ -19,3 +19,11 @@ public class Hamster {
 		this.color = color;
 	}
 }
+
+class suBclass extends Hamster
+{
+	public suBclass()
+	{
+		
+	}
+}

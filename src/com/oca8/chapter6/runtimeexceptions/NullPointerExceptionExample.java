@@ -7,7 +7,6 @@ public class NullPointerExceptionExample {
 		//output : java.lang.NullPointerException
 		String arg = null;
 		System.out.println(arg.length());
-
 	}
 
 }

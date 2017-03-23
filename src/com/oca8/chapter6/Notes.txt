@@ -6,7 +6,7 @@ Understanding Exceptions:
 * RuntimeException is defined as extending RuntimeException and their subclasses.These are also known as unchecked exceptions.
   ex: an array index out of bounds is an unchecked exception.
 * Checked Exception is defined as extending Exception class and its subclasses except the RuntimeException.
-  Checked exceptions tend to be more anticipated—for example, trying to read a fi le that doesn’t exist.
+  Checked exceptions tend to be more anticipated—for example, trying to read a file that doesn’t exist.
 
 java.lang.Object  ---> java.lang.Throwable --->  java.lang.Exception  ---> java.lang.RuntimeException	(ex : NullPointerException and ArrayIndexOutOfBoundsException)
 										   |
@@ -93,3 +93,30 @@ Printing an Exception:
 2)only exception message
 3)print stacktrace
 * Every time you call a method, Java adds it to the stack until it completes.When an exception is thrown, it goes through the stack until it finds a method that can handle it or it runs out of stack
+
+Remember that:
+--------------
+* subclasses of java.lang.Throwable can be declared in the 'throws' part of the method.This includes Error, Exception, and RuntimeException.
+* If the return type is a Exception class , then the java will not throw the exception.
+* Runtime exceptions can be thrown in any method
+
+14. Which of the following can be inserted on line 8 to make this code compile? (Choose all
+that apply)
+7: public void ohNo() throws IOException {
+8: // INSERT CODE HERE
+9: }
+A. System.out.println("it's ok");
+B. throw new Exception();
+C. throw new IllegalArgumentException();
+D. throw new java.io.IOException();
+E. throw new RuntimeException();
+
+ans: A, C, D, E. A method that declares an exception isn’t required to throw one, making
+option A correct. Runtime exceptions can be thrown in any method, making options
+C and E correct. Option D matches the exception type declared and so is also correct.
+Option B is incorrect because a broader exception is not allowed.
+
+
+* A subclass that overrrides a method that throws an Exception in its superclass (or) interface need not throw an Exception.
+* You can declare StackOverflowError in the catch block.
+* You cannot declare the IOException in the catch block.

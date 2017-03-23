@@ -35,6 +35,17 @@ public void walk4(int... start, int... nums) { } // DOES NOT COMPILE
 	- > A member is used through a variable. If it is a subclass, protected access is allowed. This works for references to the same class or a
 subclass.
 
+---------------------------------------------------------------------------------------------------
+can access					private				default				protected				public	
+---------------------------------------------------------------------------------------------------
+members of					
+the same class				yes					yes					yes						yes
+
+members of
+another class
+in Same package				no					yes					yes						yes
+
+
 Static  :
 ---------
 * Static methods don’t require an instance of the class. They are shared among all users of the class.
@@ -56,9 +67,9 @@ Scenarios :
 
 * static initializers:
 ----------------------
-* The static initializer runs when the class is first used.The statements in it run
-and assign any static variables as needed.
+* The static initializer runs when the class is first used.The statements in it run and assign any static variables as needed.
 * Static final variables should be atleast intialized in the static initialization blocks.
+
 There is a common case to use a static initializer: when you need to initialize a
 static field and the code to do so requires more than one line. This often occurs
 when you want to initialize a collection like an ArrayList. When you do need to

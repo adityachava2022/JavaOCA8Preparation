@@ -2,6 +2,7 @@ package com.oca8.chapter4;
 /* static members should call only static members*/
 public class Static 
 {
+		
 		private String name = "Static class";
 		public static void first() { }
 		public static void second() { }

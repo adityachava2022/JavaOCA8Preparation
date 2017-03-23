@@ -11,7 +11,7 @@ public class RQ19 {
 		} catch (IOException e) {
 			/* The method called inside the try block doesn’t declare an IOException to be thrown.
 			 * The compiler realizes that IOException would be an unreachable catch block */
-		} catch (RuntimeException e) {
+		} catch (Throwable e) {
 		}
 	}
 }
